@@ -4,6 +4,7 @@ import { Home } from "./components/Home";
 import { Methodology } from "./components/Methodology";
 import { Technology } from "./components/Technology";
 import { Results } from "./components/Results";
+import { ListPump} from "./components/ListPump";
 
 export const router = createBrowserRouter([
   {
@@ -14,6 +15,7 @@ export const router = createBrowserRouter([
       { path: "methodology", Component: Methodology },
       { path: "technology", Component: Technology },
       { path: "results", Component: Results },
+      { path: "list-pump", Component: ListPump },
     ],
   },
 ]);

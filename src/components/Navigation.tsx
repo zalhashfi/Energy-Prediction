@@ -10,7 +10,8 @@ export function Navigation() {
     { path: "/", label: "Home" },
     { path: "/methodology", label: "Methodology" },
     { path: "/technology", label: "Technology" },
-    { path: "/results", label: "Results" },
+    { path: "/results", label:"Results"},
+    { path: "/list-pump", label: "List Pump"},
   ];
 
   const isActive = (path: string) => {

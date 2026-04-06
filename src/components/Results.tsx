@@ -40,8 +40,8 @@ const monthlyData = [
 ];
 
 const accuracyData = [
-  { feature: "Flow Rate", importance: 28 },
-  { feature: "Pressure", importance: 24 },
+  { feature: "Flow Rate", importance: 24 },
+  { feature: "Pressure", importance: 28 },
   { feature: "Temperature", importance: 18 },
   { feature: "Salinity", importance: 15 },
   { feature: "Pump Speed", importance: 10 },

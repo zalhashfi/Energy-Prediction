@@ -163,7 +163,7 @@ export function Technology() {
 
           <div className="bg-white rounded-lg shadow-md p-8">
             <img
-              src="https://images.unsplash.com/photo-1766297247072-93fd815afef3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzY2llbnRpZmljJTIwcmVzZWFyY2glMjBsYWJvcmF0b3J5fGVufDF8fHx8MTc3MTQwNTMzOXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+              src="assets/fotoTech.jpg"
               alt="Research laboratory"
               className="rounded-lg w-full h-[400px] object-cover"
             />

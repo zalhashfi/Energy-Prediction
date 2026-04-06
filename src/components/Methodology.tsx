@@ -1,7 +1,7 @@
 import { Database, GitBranch, Settings, CheckCircle } from "lucide-react";
 
 export function Methodology() {
-  return (
+  return(
     <div className="bg-white">
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-16 md:py-24">
@@ -25,9 +25,9 @@ export function Methodology() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <img
-                src="https://images.unsplash.com/photo-1653564142048-d5af2cf9b50f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYXRhJTIwc2NpZW5jZSUyMG1hY2hpbmUlMjBsZWFybmluZ3xlbnwxfHx8fDE3NzE0ODQ5OTF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                src="assets/fotoSecond.jpg"
                 alt="Machine learning visualization"
-                className="rounded-lg shadow-xl w-full h-[400px] object-cover"
+                className="rounded-lg shadow-xl w-[500px] h-[400px] object-cover"
               />
             </div>
             <div className="space-y-4">
@@ -265,5 +265,5 @@ export function Methodology() {
         </div>
       </section>
     </div>
-  );
+  )
 }
