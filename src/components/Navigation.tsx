@@ -27,11 +27,16 @@ export function Navigation() {
         <div className="flex justify-between items-center h-16">
           {/* Logo/Brand */}
           <Link to="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl">EP</span>
-            </div>
+         <img 
+            src="/Logo-PT-GLS.png" 
+            alt="Logo Gapura Liqua Solutions" 
+            className="h-15 w-auto object-contain"
+          />
+            {/* <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-xl">GLS</span>
+            </div> */}
             <span className="font-semibold text-gray-900 hidden sm:block">
-              Energy Prediction
+               
             </span>
           </Link>
 
