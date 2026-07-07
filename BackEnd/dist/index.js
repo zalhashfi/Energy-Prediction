@@ -23,7 +23,7 @@ app.use((0, cors_1.default)({
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization', 'x-api-key']
 }));
-app.use(express_1.default.json({ limit: '100kb' }));
+app.use(express_1.default.json({ limit: '10kb' }));
 // Use morgan to log requests to winston
 app.use((0, morgan_1.default)('combined', { stream: { write: (message) => logger_1.default.info(message.trim()) } }));
 const limiter = (0, express_rate_limit_1.default)({
@@ -35,11 +35,11 @@ app.use('/api', api_routes_1.default);
 app.get('/', (req, res) => {
     res.send('Energy Prediction API is running.');
 });
-app.listen(Number(port), '0.0.0.0', () => {
-    console.log(`Server is running on port ${port} (0.0.0.0)`);
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
 });
 // 404 handler for undefined routes
-app.use('*', (req, res) => {
+app.use((req, res) => {
     res.status(404).json({ error: 'Endpoint not found' });
 });
 // Global error handler to prevent stack trace leaks
