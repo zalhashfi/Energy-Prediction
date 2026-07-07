@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router";
+import { createBrowserRouter, Navigate } from "react-router";
 import { Root } from "./components/Root";
 import { Home } from "./components/Home";
 import { Methodology } from "./components/Methodology";
@@ -16,6 +16,7 @@ export const router = createBrowserRouter([
       { path: "technology", Component: Technology },
       { path: "results", Component: Results },
       { path: "list-pump", Component: ListPump },
+      { path: "*", element: <Navigate to="/" replace /> },
     ],
   },
 ]);
