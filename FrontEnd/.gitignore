@@ -14,7 +14,7 @@ dist-ssr
 
 # Ignore environment variables in all folders
 .env
-.env.*
+.env.production
 
 # Editor directories and files
 .vscode/*
