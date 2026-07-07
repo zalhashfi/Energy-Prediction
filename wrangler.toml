@@ -1,0 +1,8 @@
+name = "energy-prediction"
+compatibility_date = "2024-03-20"
+pages_build_output_dir = "dist"
+
+[[d1_databases]]
+binding = "energy_prediction_db"
+database_name = "energy-prediction-db"
+database_id = "0bc005a0-ac80-4f1f-b5f8-f4eb53c9d6e9"

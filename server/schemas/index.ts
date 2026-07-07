@@ -1,0 +1,55 @@
+import { z } from 'zod';
+
+export const systemSchema = z.object({
+  system_name: z.string().min(1, 'system_name is required').max(255),
+}).strict();
+
+export const sensorSchema = z.object({
+  system_name: z.string(),
+  waktu_pengukuran: z.coerce.date(),
+  frek_hpp: z.number().optional(),
+  frek_intake: z.number().optional(),
+  deep_run: z.number().int().optional(),
+  in_mmf_pt1: z.number().optional(),
+  in_mmf_pt2: z.number().optional(),
+  out_mmf_pg1: z.number().optional(),
+  out_mmf_pg2: z.number().optional(),
+  in_ctf_pt: z.number().optional(),
+  in_hpp_pt: z.number().optional(),
+  out_hpp_pt: z.number().optional(),
+  in_ro_pt: z.number().optional(),
+  in_ro_pg: z.number().optional(),
+  out_ro_pt: z.number().optional(),
+  out_ro_pg: z.number().optional(),
+  out_tc_pt: z.number().optional(),
+  out_tc_pg: z.number().optional(),
+  q_produk: z.number().optional(),
+  q_feed: z.number().optional(),
+  flow_reject: z.number().optional(),
+  tds_raw: z.number().optional(),
+  tds_produk: z.number().optional(),
+  ph_produk: z.number().optional(),
+  wm_saat_ini: z.number().optional(),
+  wa_sebelum: z.number().optional(),
+  wm_selisih: z.number().optional(),
+  kwh_harian: z.number().optional(),
+  kwh: z.number().optional(),
+  sec: z.number().optional(),
+  produksi_harian: z.number().optional(),
+  wm_sumur: z.number().optional(),
+  sec_: z.number().optional(),
+  recovery_rate: z.number().optional(),
+  salt_rejection: z.number().optional(),
+  delta_p_ro: z.number().optional(),
+}).strict();
+
+export const dailyReportSchema = z.object({
+  system_name: z.string(),
+  hari_pengukuran: z.coerce.date(),
+  kwh_meter_kumulatif: z.number().or(z.bigint()).optional(),
+  kwh_harian: z.number().int().optional(),
+  produksi_harian: z.number().int().optional(),
+  wm_harian: z.number().int().optional(),
+  sec: z.number().optional(),
+  sec_rekap: z.number().optional(),
+}).strict();

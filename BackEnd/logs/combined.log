@@ -1,3 +1,0 @@
-{"level":"info","message":"::1 - - [07/Jul/2026:05:32:28 +0000] \"GET / HTTP/1.1\" 200 33 \"-\" \"Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.8737\"","timestamp":"2026-07-07T05:32:28.716Z"}
-{"level":"info","message":"::1 - - [07/Jul/2026:05:32:44 +0000] \"GET / HTTP/1.1\" 200 33 \"-\" \"curl/8.20.0\"","timestamp":"2026-07-07T05:32:44.592Z"}
-{"level":"info","message":"::1 - - [07/Jul/2026:05:32:51 +0000] \"GET /random-route HTTP/1.1\" 404 30 \"-\" \"curl/8.20.0\"","timestamp":"2026-07-07T05:32:51.060Z"}

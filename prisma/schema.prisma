@@ -1,0 +1,109 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["driverAdapters"]
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model System {
+  id              Int               @id @default(autoincrement())
+  system_name     String            @unique
+  api_key         String            @default(uuid()) @unique
+  created_at      DateTime          @default(now())
+  updated_at      DateTime          @updatedAt
+  dataSensors     DataSensorRaw[]
+  dailyReports    DailyReportRaw[]
+
+  @@map("system")
+}
+
+model DataSensorRaw {
+  id               Int      @id @default(autoincrement())
+  system_name      String
+  waktu_pengukuran DateTime
+
+  // frekuensi pompa
+  frek_hpp         Float?
+  frek_intake      Float?
+  deep_run         Int?
+
+  // pre-treatment
+  in_mmf_pt1       Float?
+  in_mmf_pt2       Float?
+  out_mmf_pg1      Float?
+  out_mmf_pg2      Float?
+
+  // SWRO - TEKANAN
+  in_ctf_pt        Float?
+  in_hpp_pt        Float?
+  out_hpp_pt       Float?
+  in_ro_pt         Float?
+  in_ro_pg         Float?
+  out_ro_pt        Float?
+  out_ro_pg        Float?
+  out_tc_pt        Float?
+
+  // SWRO-PRODUKSI
+  out_tc_pg        Float?
+  q_produk         Float?
+  q_feed           Float?
+
+  // kualitas air
+  flow_reject      Float?
+  tds_raw          Float?
+  tds_produk       Float?
+
+  // water meter
+  ph_produk        Float?
+  wm_saat_ini      Float?
+  wa_sebelum       Float?
+
+  // daily report
+  wm_selisih       Float?
+  kwh_harian       Float?
+  kwh              Float?
+  sec              Float?
+  produksi_harian  Float?
+  wm_sumur         Float?
+
+  // derived features
+  sec_             Float?
+  recovery_rate    Float?
+  salt_rejection   Float?
+  delta_p_ro       Float?
+
+  // time
+  created_at       DateTime @default(now())
+  updated_at       DateTime @updatedAt
+
+  // relation
+  system           System   @relation(fields: [system_name], references: [system_name])
+
+  @@map("data_sensor_raw")
+}
+
+model DailyReportRaw {
+  id                  Int      @id @default(autoincrement())
+  system_name         String
+  hari_pengukuran     DateTime
+
+  // data
+  kwh_meter_kumulatif BigInt?
+  kwh_harian          Int?
+  produksi_harian     Int?
+  wm_harian           Int?
+  sec                 Float?
+  sec_rekap           Float?
+
+  // time
+  created_at          DateTime @default(now())
+  updated_at          DateTime @updatedAt
+
+  // relation
+  system              System   @relation(fields: [system_name], references: [system_name])
+
+  @@map("daily_report_raw")
+}
