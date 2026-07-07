@@ -38,6 +38,10 @@ app.get('/', (req, res) => {
 app.listen(Number(port), '0.0.0.0', () => {
     console.log(`Server is running on port ${port} (0.0.0.0)`);
 });
+// 404 handler for undefined routes
+app.use('*', (req, res) => {
+    res.status(404).json({ error: 'Endpoint not found' });
+});
 // Global error handler to prevent stack trace leaks
 app.use((err, req, res, next) => {
     logger_1.default.error(`Unhandled Error: ${err.message}`, { stack: err.stack });
